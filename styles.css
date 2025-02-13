@@ -1,0 +1,161 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #dfdfde;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#valentinText {
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 100%;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50px;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#valentinText2 {
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 100%;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50px;
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Centrar los botones */
+.container {
+   
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 10;
+    flex-direction: row; /* Asegura que los botones estén en columna */
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 10;
+    flex-direction: row; /* Asegura que los botones estén en columna */
+}
+
+/* Estilo de los botones */
+#movableButton{
+    
+    position: absolute;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    padding: 15px 30px;  /* Tamaño consistente para ambos botones */
+    width: 300px;  /* Ambos botones tendrán el mismo ancho */
+    height: 60px;  /* Ambos botones tendrán la misma altura */
+    text-align: center;  /* Centrado del texto en los botones */
+}
+
+#staticButton {
+    left: 100px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    padding: 15px 30px;  /* Tamaño consistente para ambos botones */
+    width: 300px;  /* Ambos botones tendrán el mismo ancho */
+    height: 60px;  /* Ambos botones tendrán la misma altura */
+    text-align: center;  /* Centrado del texto en los botones */
+}
+
+/* Botón movable */
+#movableButton {
+    background-color: red;
+    color: white;
+    position: absolute; /* Para que el botón se pueda mover libremente */
+}
+
+/* Botón estático */
+#staticButton {
+    background-color: green;
+    color: white;
+}
+
+/* Estilo del hover y active de los botones */
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#message {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.images-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-wrapper {
+    display: flex;
+    position: absolute;
+    animation: moveImages 20s linear infinite;
+}
+
+.image-wrapper img {
+    margin-right: 10px;
+    height: 200px;
+}
+
+@keyframes moveImages {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+#arrow {
+    position: absolute;
+    width: 2px;
+    background-color: red;
+    transform-origin: top;
+    transform: rotate(0deg);
+    pointer-events: none;
+    z-index: 10;
+}
