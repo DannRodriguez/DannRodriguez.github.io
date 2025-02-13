@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones Interactivos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Fondo rojo tipo teatro */
+        body {
+            background: radial-gradient(circle, rgba(80, 0, 0, 1) 10%, rgba(150, 0, 0, 1) 50%, rgba(80, 0, 0, 1) 90%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        
+        /* Efecto de foco */
+        .spotlight {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle, rgba(255, 255, 200, 0.5) 10%, rgba(0, 0, 0, 0.9) 80%);
+            animation: spotlightFade 3s infinite alternate;
+            pointer-events: none;
+        }
+        
+        @keyframes spotlightFade {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Estilo para el pie de página */
+        #footer {
+            display: none;
+            text-align: center;
+            
+            color: white;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="spotlight"></div> <!-- Foco animado -->
+    <p id="valentinText">¿Quieres ser mi Valentín?</p>
+    <div class="container">
+        <button id="staticButton">Si, mi vida 💕</button>
+        <button id="movableButton">No, te voy a ghostear de una vez</button>
+        <div id="imagesContainer" style="position: relative; width: 100%; height: 100%;"></div>
+        <p id="message"></p>
+    </div>
+
+    <!-- Pie de página (oculto inicialmente) -->
+    <div id="footer" style="text-align: center; padding: 10px; color: white;">
+        <p style="font-size: 18px; margin: 0;">Que lindos los dias que he pasado contigo mi amor, no puedo esperar para vivir mucha mas vida contigo. Te quiero demasiado!❤️ </p>
+    </div>
+    
+
+    <script src="animacion.js"></script>
+    <script>
+        // Selección de botones y pie de página
+        const yesButton = document.getElementById('staticButton');
+        const footer = document.getElementById('footer');
+
+        yesButton.addEventListener('click', () => {
+            // Mostrar el pie de página después de presionar el botón "Sí"
+            footer.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
